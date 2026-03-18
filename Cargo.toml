@@ -1,0 +1,40 @@
+[workspace]
+members = [
+    "rowifi", 
+    "rowifi_cache", 
+    "rowifi_core",
+    "rowifi_database", 
+    "rowifi_derive", 
+    "rowifi_framework", 
+    "rowifi_lemonsqueezy", 
+    "rowifi_models", 
+    "rowifi_roblox_models", 
+    "rowifi_roblox"
+]
+resolver = "2"
+
+[workspace.dependencies]
+axum = { version = "0.8" }
+chrono = { version = "0.4", default-features = false, features = ["std"] }
+itertools = { version = "0.14" }
+hyper = { version = "1.0", default-features = false, features = ["client", "http2"] }
+serde = { version = "1.0" }
+serde_json = { version = "1" }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+tower = { version = "0.5", default-features = false }
+tracing = "0.1"
+twilight-http = { branch = "main", git = "https://github.com/twilight-rs/twilight", default-features = false, features = ["rustls-webpki-roots", "rustls-ring"] }
+twilight-mention = { branch = "main", git = "https://github.com/twilight-rs/twilight" }
+twilight-model = { branch = "main", git = "https://github.com/twilight-rs/twilight" }
+twilight-standby = { branch = "main", git = "https://github.com/twilight-rs/twilight" }
+twilight-validate = { branch = "main", git = "https://github.com/twilight-rs/twilight" }
+twilight-util = { branch = "main", git = "https://github.com/twilight-rs/twilight", default-features = false, features = ["builder"] }
+
+[patch.'https://github.com/RoWifi-HQ/RoWifi-V4']
+rowifi_core = { path = "rowifi_core" }
+rowifi_cache = { path = "rowifi_cache" }
+rowifi_database = { path = "rowifi_database" }
+rowifi_framework = { path = "rowifi_framework" }
+rowifi_models = { path = "rowifi_models" }
+rowifi_roblox_models = { path = "rowifi_roblox_models" }
+rowifi_roblox = { path = "rowifi_roblox" }
